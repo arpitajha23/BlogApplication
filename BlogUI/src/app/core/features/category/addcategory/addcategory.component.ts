@@ -32,7 +32,7 @@ onSubmit(){
  this.addcategorysubscription = this.categoryService.addCategory(this.model)
     .subscribe({
       next: (response) => {
-        this.router.navigateByUrl('/admin/categories');
+        this.router.navigateByUrl('/admin/categorylist');
       }
     })
   }

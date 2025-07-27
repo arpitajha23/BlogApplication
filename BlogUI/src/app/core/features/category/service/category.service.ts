@@ -4,6 +4,7 @@ import { AddCategoryRequest } from '../models/add-category-request.model';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from '../../../../../environments/environment';
 import { Category } from '../models/category.model';
+import { UpdateCategoryRequest } from '../models/update-category-request.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class CategoryService {
         return this.http.post<void>(`${environment.apiBaseUrl}/api/categories`, model);
 
     }
-     getAllCategories(
+    getAllCategories(
     query?: string, sortBy?: string, sortDirection?: string,
     pageNumber?: number, pageSize?: number): Observable<Category[]> {
     let params = new HttpParams();
@@ -59,9 +60,9 @@ export class CategoryService {
   //   return this.http.post<void>(`${environment.apiBaseUrl}/api/categories?addAuth=true`, model);
   // }
 
-  // updateCategory(id: string, updateCategoryRequest: UpdateCategoryRequest): Observable<Category> {
-  //   return this.http.put<Category>(`${environment.apiBaseUrl}/api/categories/${id}?addAuth=true`, updateCategoryRequest);
-  // }
+  updateCategory(id: string, updateCategoryRequest: UpdateCategoryRequest): Observable<Category> {
+    return this.http.put<Category>(`${environment.apiBaseUrl}/api/categories/${id}?addAuth=true`, updateCategoryRequest);
+  }
 
   deleteCategory(id: string): Observable<Category> {
     return this.http.delete<Category>(`${environment.apiBaseUrl}/api/categories/${id}?addAuth=true`)

@@ -3,10 +3,11 @@ import { Category } from '../models/category.model';
 import { Observable } from 'rxjs';
 import { CategoryService } from '../service/category.service';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-category-list',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './category-list.component.html',
   styleUrl: './category-list.component.scss'
 })

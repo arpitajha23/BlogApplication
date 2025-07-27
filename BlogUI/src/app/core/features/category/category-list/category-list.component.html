@@ -7,9 +7,10 @@
             <button type="button" class="btn btn-warning ms-3" (click)="onSearch(queryText.value)">Search</button>
         </div>
 
-        <a class="btn btn-primary" href="/admin/category/create">Create Category</a>
-    </div>
-     <ng-container *ngIf="categories$ | async as categories">
+        <!-- <a class="btn btn-primary" href="/admin/category/create">Create Category</a> -->
+    <a [routerLink]="['/admin/category/create']" class="btn btn-primary">Add Category</a> 
+  </div>
+   <ng-container *ngIf="categories$ | async as categories">
     <table class="table table-bordered mt-3">
       <thead>
         <tr>
@@ -55,7 +56,7 @@
           <td>{{category.name}}</td>
           <td>{{category.urlHandle}}</td>
           <td>
-            <a class="btn btn-light">Edit</a>
+            <a class="btn btn-light" [routerLink]="['/admin/categories', category.id]">Edit</a>
           </td>
         </tr>
       </tbody>
