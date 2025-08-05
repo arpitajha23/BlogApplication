@@ -10,11 +10,12 @@ import { ImageService } from '../../../shared/components/image-selector/image.se
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MarkdownComponent } from 'ngx-markdown';
+import { ImageSelectorComponent } from "../../../shared/components/image-selector/image-selector.component";
 
 
 @Component({
   selector: 'app-edit-blogpost',
-  imports: [FormsModule, CommonModule, MarkdownComponent],
+  imports: [FormsModule, CommonModule, MarkdownComponent, ImageSelectorComponent],
   templateUrl: './edit-blogpost.component.html',
   styleUrl: './edit-blogpost.component.scss'
 })
